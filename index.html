@@ -15,19 +15,52 @@
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
       rel="stylesheet" />
     <style>
+      html {
+        background-color: white;
+      }
       .font-lexend {
         font-family: "Lexend", sans-serif;
         font-optical-sizing: auto;
         font-weight: 400;
         font-style: normal;
       }
+
+      .transaction {
+        border: 1px solid rgba(182, 181, 181, 0.765);
+        margin-top: 24px;
+        padding-bottom: 20px;
+        width: 90%;
+        /* md:h-[79.1] */
+        padding: 32px;
+        border-radius: 16px;
+        height: fit-content;
+      }
+
+      .transaction-heading {
+        font-weight: 700;
+        font-size: 16px;
+        /* md:text-xl */
+        color: #111111;
+        margin-bottom: 16px;
+      }
+
+      .transaction-time {
+        font-weight: 300;
+        font-size: 16px;
+        color: #111111b3;
+      }
+
+      .center-pop {
+        top: calc(50vh - 151px);
+        left: calc(50vw - 232px);
+      }
     </style>
 
     <title>DOM Quest</title>
   </head>
-  <body class="m-0 p-0 font-lexend">
+  <body class="m-0 p-0 font-lexend bg-white">
     <header
-      class="bg-[#f9f7f3] flex justify-center items-center pb-[40px] md:pb-[64px]">
+      class="bg-[#f9f7f3bf] backdrop-blur-sm flex justify-center items-center pb-[40px] md:pb-[64px] sticky top-0 left-0 z-10 half-opacity">
       <nav
         class="w-[90%] md:w-[79.1%] flex justify-between mt-6 text-base md:text-lg">
         <button
@@ -53,10 +86,10 @@
       </nav>
     </header>
 
-    <main>
+    <main class="half-opacity">
       <!-- Button section -->
       <section
-        class="flex justify-center bg-white text-base md:text-lg pt-[50px] pb-6 md:pt-[80px] md:pb-8 gap-4">
+        class="flex justify-center bg-[#fefefe82] backdrop-blur-sm text-base md:text-lg pt-[50px] pb-6 md:pt-[80px] md:pb-8 gap-4 sticky top-[99px] md:top-[137px] left-0 z-10">
         <button
           class="btn btn-success bg-[#B4F461] text-[#111111] font-semibold w-[110px] md:w-[157px] h-[42px] md:h-[57px] rounded-lg text-base md:text-lg border-0">
           Donation
@@ -217,9 +250,41 @@
       </section>
 
       <!-- History Section -->
-      <section id="history-section hidden"></section>
+      <section
+        id="history-section "
+        class="flex justify-center h-screen bg-white hidden">
+        <div class="transaction">
+          <h2 class="transaction-heading">
+            96500 Taka is Donated for famine-2024 at Feni, Bangladesh
+          </h2>
+          <p class="transaction-time">
+            Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)
+          </p>
+        </div>
+      </section>
+
+      <!-- popup -->
+      <div
+        class="hidden h-screen w-screen bg-[#111111b3] z-30 fixed top-0 left-0">
+        <section
+          class="fixed center-pop z-40 donated-popup flex flex-col gap-5 items-center bg-white py-6 px-[100px] rounded-2xl w-fit full-opacity">
+          <h1 class="font-extrabold text-4xl text-black">Congrats!</h1>
+          <img src="assets/coin.png" alt="" />
+          <p class="font-light text-[#111111]">
+            You Have Donated for Humankind
+          </p>
+          <p class="text-[#111111] font-bold">Successfully</p>
+
+          <button class="bg-gray-200 text-[#111111] px-3 py-4 rounded-lg">
+            close information
+          </button>
+        </section>
+      </div>
     </main>
 
     <footer></footer>
+
+    <script src="script/utilities.js"></script>
+    <script src="script/script.js"></script>
   </body>
 </html>
