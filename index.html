@@ -4,7 +4,57 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet" />
+    <style>
+      .font-lexend {
+        font-family: "Lexend", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+
     <title>DOM Quest</title>
   </head>
-  <body></body>
+  <body class="m-0 p-0 font-lexend">
+    <header
+      class="border bg-[#f9f7f3] flex justify-center items-center pb-[40px] md:pb-[64px]">
+      <nav
+        class="w-[90%] md:w-[79.1%] flex justify-between mt-6 text-base md:text-lg">
+        <button
+          class="bg-[#B4F461] text-[#111111] font-semibold w-[90px] md:w-[110px] h-[35px] md:h-[49px] rounded-lg">
+          Blog
+        </button>
+        <div class="flex items-center text-[#111111] font-semibold gap-4">
+          <div class="logo-container w-[35px] h-[35px] md:w-12 md:h-12">
+            <img class="h-[100%] w-[100%]" src="assets/logo.png" alt="" />
+          </div>
+          <p class="hidden md:block">Donate Bangladesh</p>
+        </div>
+
+        <div id="balance-container" class="flex items-center gap-1 md:gap-3">
+          <div class="coin-container">
+            <img class="w-fit h-fit" src="assets/coin.png" alt="" />
+          </div>
+          <div class="flex gap-1 text-[#111111B3] font-medium">
+            <p id="current-balance">5500</p>
+            <p>BDT</p>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main></main>
+
+    <footer></footer>
+  </body>
 </html>
