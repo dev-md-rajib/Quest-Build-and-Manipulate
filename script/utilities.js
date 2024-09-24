@@ -1,5 +1,6 @@
 function gotoPage(id) {
   console.log(document.getElementById("donation-section"));
+
   window.location.href = "./" + id;
 }
 
@@ -26,14 +27,20 @@ function donateMoney(inputId, collectionField, successMessage) {
     document.getElementById("current-balance").innerText
   );
   let donateText = document.getElementById(inputId).value;
-  console.log(donateText, typeof donateText);
-  if (isNaN(donateText) || donateText == "") {
+  console.log(donateText, typeof donateText, donateText.length);
+  let comparator = "";
+  for (i = 0; i < donateText.length; i++) {
+    comparator += " ";
+  }
+  if (isNaN(donateText) || donateText == "" || donateText == comparator) {
     showAlert("Donation amount should be a number.");
+    document.getElementById(inputId).value = "";
     return;
   }
   let donateBalance = parseFloat(donateText);
   if (donateBalance <= 0) {
     showAlert("Donated money should be positive.");
+    document.getElementById(inputId).value = "";
     return;
   }
 
