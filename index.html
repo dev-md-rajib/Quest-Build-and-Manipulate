@@ -56,6 +56,26 @@
         font-size: 16px;
         color: #111111b3;
       }
+
+      .selected {
+        background-color: #b4f461;
+        border-color: transparent;
+        color: #111111;
+      }
+
+      .selected:hover {
+        filter: contrast(0.9);
+      }
+
+      .not-selected {
+        background-color: transparent;
+        border-color: #1111114d;
+        color: #111111b3;
+      }
+
+      .not-selected:hover {
+        background-color: rgba(226, 226, 226, 0.943);
+      }
     </style>
 
     <title>DOM Quest</title>
@@ -67,7 +87,7 @@
         class="w-[90%] md:w-[79.1%] flex justify-between mt-4 md:mt-6 text-base md:text-lg">
         <button
           id="blog-button"
-          class="bg-[#B4F461] text-[#111111] font-semibold w-[90px] md:w-[110px] h-[35px] md:h-[49px] rounded-lg">
+          class="bg-[#B4F461] hover:contrast-[.9] text-[#111111] font-semibold w-[90px] md:w-[110px] h-[35px] md:h-[49px] rounded-lg">
           Blog
         </button>
         <div class="flex items-center text-[#111111] font-semibold gap-4">
@@ -95,13 +115,13 @@
         class="flex justify-center bg-[#fefefe82] backdrop-blur-3xl text-base md:text-lg pt-6 pb-4 md:pt-8 md:pb-6 gap-4 sticky top-[67px] md:top-[97px] left-0 z-10">
         <button
           id="donation-button"
-          class="bg-[#B4F461] text-[#111111] font-semibold w-[110px] md:w-[157px] h-[42px] md:h-[57px] rounded-lg text-base md:text-lg border border-transparent">
+          class="selected font-semibold w-[110px] md:w-[157px] h-[42px] md:h-[57px] rounded-lg text-base md:text-lg border">
           Donation
         </button>
 
         <button
           id="history-button"
-          class="border w-[110px] md:w-[157px] h-[42px] md:h-[57px] text-base md:text-lg text-[#111111B3] border-[#1111114D] rounded-lg font-semibold">
+          class="not-selected border w-[110px] md:w-[157px] h-[42px] md:h-[57px] text-base md:text-lg border-[#1111114D] rounded-lg font-semibold">
           History
         </button>
       </section>
@@ -153,7 +173,7 @@
               placeholder="Write Donation Amount" />
             <button
               id="donateButton1"
-              class="w-full bg-[#B4F461] h-[57px] rounded-lg text-[#111111] md:text-xl text-base font-semibold">
+              class="w-full bg-[#B4F461] hover:contrast-[.9] h-[57px] rounded-lg text-[#111111] md:text-xl text-base font-semibold">
               Donate Now
             </button>
           </div>
@@ -203,7 +223,7 @@
               placeholder="Write Donation Amount" />
             <button
               id="donateButton2"
-              class="w-full bg-[#B4F461] h-[57px] rounded-lg text-[#111111] md:text-xl text-base font-semibold">
+              class="w-full bg-[#B4F461] hover:contrast-[.9] h-[57px] rounded-lg text-[#111111] md:text-xl text-base font-semibold">
               Donate Now
             </button>
           </div>
@@ -254,7 +274,7 @@
               placeholder="Write Donation Amount" />
             <button
               id="donateButton3"
-              class="w-full bg-[#B4F461] h-[57px] rounded-lg text-[#111111] md:text-xl text-base font-semibold">
+              class="w-full bg-[#B4F461] hover:contrast-[.9] h-[57px] rounded-lg text-[#111111] md:text-xl text-base font-semibold">
               Donate Now
             </button>
           </div>
@@ -283,7 +303,8 @@
             <p class="text-[#111111] font-bold">Successfully</p>
 
             <form method="dialog">
-              <button class="bg-gray-200 text-[#111111] px-3 py-4 rounded-lg">
+              <button
+                class="bg-gray-200 hover:bg-gray-300 text-[#111111] px-3 py-4 rounded-lg">
                 close information
               </button>
             </form>

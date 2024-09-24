@@ -3,26 +3,21 @@ function gotoPage(id) {
   window.location.href = "./" + id;
 }
 
-//Common function-1
+//common function-1
 function toggleLayout(id, buttonId) {
   document.getElementById("donation-section").classList.add("hidden");
   document.getElementById("history-section").classList.add("hidden");
   document.getElementById(id).classList.remove("hidden");
   document.getElementById(id).classList.add("flex");
 
-  document.getElementById("history-button").style.backgroundColor =
-    "transparent";
-  document.getElementById("donation-button").style.backgroundColor =
-    "transparent";
-  document.getElementById("history-button").style.borderColor = "#1111114D";
-  document.getElementById("donation-button").style.borderColor = "#1111114D";
+  document.getElementById("history-button").classList.add("not-selected");
+  document.getElementById("donation-button").classList.add("not-selected");
 
-  document.getElementById("history-button").style.color = "#111111B3";
-  document.getElementById("donation-button").style.color = "#111111B3";
+  document.getElementById("history-button").classList.remove("selected");
+  document.getElementById("donation-button").classList.remove("selected");
 
-  document.getElementById(buttonId).style.backgroundColor = "#B4F461";
-  document.getElementById(buttonId).style.borderColor = "transparent";
-  document.getElementById(buttonId).style.color = "#111111";
+  document.getElementById(buttonId).classList.remove("not-selected");
+  document.getElementById(buttonId).classList.add("selected");
 }
 
 // Common function-2
